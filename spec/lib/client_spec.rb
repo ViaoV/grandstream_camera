@@ -18,15 +18,15 @@ describe Grandstream::Client do
 
     describe "#load_options" do 
         it "should return hash" do
-           expect(client.load_options("goform/audio_video")).to be_a(Hash)
+           expect(client.load_options("audio_video")).to be_a(Hash)
         end
     end
 
     describe "#set_options" do 
         it "should set an option" do 
-           old_options = client.load_options("goform/audio_video")
-           client.set_options "goform/audio_video", { "video.primary.framerate" => 1 }
-           new_options = client.load_options("goform/audio_video")
+           old_options = client.load_options("audio_video")
+           client.set_options "audio_video", { "video.primary.framerate" => 1 }
+           new_options = client.load_options("audio_video")
            expect(new_options["video.primary.framerate"]).to eq("1")
         end
     end

@@ -23,12 +23,12 @@ module Grandstream
         end
 
         def get(path)
-            url = "#{base_url}/#{path}?cmd=get"
+            url = "#{base_url}/goform/#{path}?cmd=get"
             open(url).read
         end
 
         def set(path, params)
-            url = "#{base_url}/#{path}?cmd=set&#{params.map{|k,v| "#{k}=#{v}"}.join("&")}"
+            url = "#{base_url}/goform/#{path}?cmd=set&#{params.map{|k,v| "#{k}=#{v}"}.join("&")}"
             http_request(url) do |http, uri|
                 req = Net::HTTP::Get.new(uri)
                 req.basic_auth 'admin', 'admin'

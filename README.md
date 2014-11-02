@@ -18,7 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    client = Grandstream::Client.new("10.0.1.4")
+    options = client.load_options("audio_video") # returns a hash of options
+    client.set_options "audio_video", { "primary.video.framerate": 30 }
+    
 
 ## Contributing
 
