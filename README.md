@@ -21,7 +21,14 @@ Or install it yourself as:
     client = Grandstream::Client.new("10.0.1.4")
     options = client.load_options("audio_video") # returns a hash of options
     client.set_options "audio_video", { "primary.video.framerate": 30 }
-    
+   
+
+
+## Command Line Utility
+
+A command line utility is also provided in the gem which can take snapshots from the camera.
+
+    gs_camera snapshot --ip _<camera ip>_ --outfile image.jpg 
 
 ## Contributing
 
