@@ -1,0 +1,59 @@
+#!/usr/bin/env ruby
+require "grandstream"
+require "pathname"
+require "optparse"
+
+
+
+class CommandProcessor
+    attr_accessor :options 
+    def initialize(options)
+        @options = options
+    end
+
+    def snapshot
+        abort("No Camera IP given") unless options[:ip]
+        abort("No output file given") unless options[:out_file]
+        client = Grandstream::Client.new(options[:ip])
+        client.get_snapshot(options[:out_file])
+        puts "Snapshot downloaded."
+    end
+end
+
+
+def header
+    "\nGrandstream IP Camera Utility (#{Grandstream::VERSION})\n\n"
+end
+
+def executable_name
+    Pathname.new(__FILE__).basename
+end
+
+def short_help
+    "#{executable_name} <command> <options>\nFor more help use #{executable_name} help.\n\n"
+end
+
+command = ARGV.shift
+
+options = {}
+parser = OptionParser.new do |opts|
+    opts.banner = "#{header}Usage: #{executable_name} command [options]"
+    opts.on('--outfile NAME', String, 'Output filename') { |v| options[:out_file] = v }
+    opts.on('-h', '--help', 'Displays help') { puts opts }
+    opts.on('--ip IP_ADDRESS', String, 'Set the IP address for the camera') { |v| options[:ip] = v}
+end
+parser.parse!
+
+processor = CommandProcessor.new(options)
+
+abort(parser.to_s) unless command
+
+if processor.respond_to?(command) 
+    processor.send(command.to_sym)
+else
+    puts parser
+end
+
+
+
+puts ""
