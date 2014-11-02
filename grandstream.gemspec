@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["joe@5sigma.io"]
   spec.summary       = %q{A client interface to the HTTP Api for grandstream IP cameras}
   spec.description   = %q{Grandstream IP camera HTTP api for setting and retrieving camera options and performing various tasks.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/ViaoV/grandstream_camera"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
