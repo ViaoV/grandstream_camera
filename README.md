@@ -28,7 +28,7 @@ Or install it yourself as:
 
 A command line utility is also provided in the gem which can take snapshots from the camera.
 
-    gs_camera snapshot --ip _<camera ip>_ --outfile image.jpg 
+    gs_camera snapshot --ip 10.0.1.4 --outfile image.jpg 
 
 ## Contributing
 
