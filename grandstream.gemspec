@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'grandstream/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "grandstream-camera"
+  spec.name          = "grandstream_camera"
   spec.version       = Grandstream::VERSION
   spec.authors       = ["Joe Bellus"]
   spec.email         = ["joe@5sigma.io"]
