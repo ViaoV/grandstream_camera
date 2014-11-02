@@ -1,6 +1,10 @@
 # Grandstream
 
-TODO: Write a gem description
+This gem provides an interface for interacting with Grandsteam IP Cameras.
+
+For more information see http://www.grandstream.com/index.php/products/ip-video-surveillance
+
+For API information see http://www.grandstream.com/products/surveillance/general/documents/grandstream_http_api.pdf
 
 ## Installation
 
