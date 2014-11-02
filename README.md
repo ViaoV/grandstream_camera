@@ -4,7 +4,7 @@ This gem provides an interface for interacting with Grandsteam IP Cameras.
 
 For more information see http://www.grandstream.com/index.php/products/ip-video-surveillance
 
-For API information see http://www.grandstream.com/products/surveillance/general/documents/grandstream_http_api.pdf
+For API information view the Grandstream API documentation at  http://www.grandstream.com/products/surveillance/general/documents/grandstream_http_api.pdf
 
 ## Installation
 
